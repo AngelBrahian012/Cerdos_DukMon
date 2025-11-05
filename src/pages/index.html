@@ -1,22 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marranera PigWork | Calidad Prime</title>
+  <link rel="stylesheet" href="../Styles/style.css" />
+  <meta name="description" content="Venta de carne de cerdo fresca: cortes prime, lechona, chorizos y más. Entregas a domicilio." />
 </head>
 <body>
-    <main>
-        <section>
-            <a href="index.html">Inicio</a> ||
-            <a href="nosotros.html">Nosotros</a> || 
-            <a href="servicio.html">Servicios</a> ||
-        </section>
-    </main>
-    <main>
-        <section>
+  <header class="header">
+    <div class="topbar">Envío GRATIS en compras mayores a $300.000 (área metropolitana)</div>
+    <nav class="container nav" aria-label="Principal">
+      <a class="brand" href="./index.html">
+        <div class="logo">PW</div><span>Marranera PigWork</span>
+      </a>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./servicio.html">Productos</a></li>
+        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a href="#contacto">Contáctenos</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        </section>
-    </main>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="content">
+          <span class="badge">Los mejores cortes de cerdo</span>
+          <h1>Calidad Prime al mejor precio</h1>
+          <p>Fresco, jugoso y seleccionado por expertos. Compra online y recibe en tu domicilio el mismo día.</p>
+          <div style="display:flex;gap:10px">
+            <a class="btn btn-primary" href="./servicio.html">Ver productos</a>
+            <a class="btn btn-outline" href="#galeria">Ver galería</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destacados -->
+    <section class="section">
+      <div class="container">
+        <h2>Productos destacados</h2>
+        <p class="lead">Cortes populares para parrilla, cocina diaria y eventos especiales.</p>
+        <div class="cards">
+          <article class="card">
+            <img src="../assets/card-costillas.jpg" alt="Costillas de cerdo frescas" />
+            <div class="p">
+              <h3>Costilla BBQ</h3>
+              <p>Costilla carnuda, ideal para ahumar o al horno.</p>
+              <p class="price">$24.900 / lb</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/card-lomo.jpg" alt="Lomo de cerdo" />
+            <div class="p">
+              <h3>Lomo Premium</h3>
+              <p>Magro, suave y versátil. Perfecto para medallones.</p>
+              <p class="price">$27.500 / lb</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/card-chuleta.jpg" alt="Chuletas de cerdo" />
+            <div class="p">
+              <h3>Chuleta Ahumada</h3>
+              <p>Listas para la sartén o parrilla. Sabor irresistible.</p>
+              <p class="price">$22.400 / lb</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banda informativa -->
+    <section class="section">
+      <div class="container">
+        <div class="band">
+          <p><strong>¿Negocio o evento?</strong> Cotiza precios al por mayor y servicio de asado.</p>
+          <a class="btn btn-primary" href="https://wa.me/573001112233?text=Hola%20PigWork,%20quiero%20cotizar%20al%20por%20mayor." target="_blank" rel="noopener">Cotizar en WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrusel simple -->
+    <section id="galeria" class="section">
+      <div class="container">
+        <h2>Galería</h2>
+        <p class="lead">Algunas fotos de nuestros productos y preparaciones.</p>
+
+        <div class="carousel" aria-roledescription="carrusel">
+          <div id="track" style="transform:translateX(0%)">
+            <img src="../assets/slide-1.jpg" alt="Corte de cerdo marmoleado" />
+            <img src="../assets/slide-2.jpg" alt="Parrilla con chuletas" />
+            <img src="../assets/slide-3.jpg" alt="Costilla barnizada con BBQ" />
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button aria-label="Diapositiva 1" class="active" onclick="document.getElementById('track').style.transform='translateX(0%)';act(0)"></button>
+          <button aria-label="Diapositiva 2" onclick="document.getElementById('track').style.transform='translateX(-100%)';act(1)"></button>
+          <button aria-label="Diapositiva 3" onclick="document.getElementById('track').style.transform='translateX(-200%)';act(2)"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2>Contáctenos</h2>
+        <p class="lead">Pedidos, cotizaciones y sugerencias. Responderemos a la mayor brevedad.</p>
+        <div class="contact">
+          <form class="form" onsubmit="event.preventDefault(); alert('Gracias por escribirnos. Te contactaremos pronto.');">
+            <input class="input" type="text" placeholder="Nombre completo" required />
+            <input class="input" type="tel" placeholder="Teléfono" required />
+            <input class="input full" type="email" placeholder="Correo electrónico" required />
+            <textarea class="textarea full" placeholder="Escribe tu mensaje..." required></textarea>
+            <button class="btn btn-primary full" type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container grid">
+      <div>
+        <h3 style="color:#fff;margin-bottom:8px">Marranera PigWork</h3>
+        <p>Calle 123 #45-67, Barrio Centro, Ciudad</p>
+        <p>Horario: Lun–Sáb 8:00–18:00</p>
+      </div>
+      <div>
+        <h4 style="color:#fff;margin-bottom:8px">Enlaces</h4>
+        <ul style="list-style:none;display:grid;gap:6px">
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./servicio.html">Productos</a></li>
+          <li><a href="./nosotros.html">Nosotros</a></li>
+          <li><a href="#contacto">Contáctenos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff;margin-bottom:8px">Contacto</h4>
+        <p>Tel: (300) 111 22 33</p>
+        <p>Correo: ventas@pigwork.com</p>
+      </div>
+    </div>
+    <div class="copy">© <span id="y"></span> PigWork. Todos los derechos reservados.</div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <div class="whatsapp" aria-label="WhatsApp">
+    <a href="https://wa.me/573005335525?text=Hola%20PigWork,%20necesito%20información%20sobre%20productos." target="_blank" rel="noopener">
+      <span class="icon">🟢</span> WhatsApp
+    </a>
+  </div>
+
+  <script>
+    // Poner año en el footer y activar indicador del carrusel
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function act(i){
+      const btns = document.querySelectorAll('.carousel-nav button');
+      btns.forEach(b=>b.classList.remove('active'));
+      btns[i].classList.add('active');
+    }
+  </script>
 </body>
 </html>
