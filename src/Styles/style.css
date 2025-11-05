@@ -1,0 +1,170 @@
+:root{
+  --primary:#B0303B;
+  --primary-dark:#8F2530;
+  --dark:#2B2B2B;
+  --cream:#F7F1EE;
+  --muted:#F3F4F6;
+  --text:#2B2B2B;
+  --accent:#25D366; /* WhatsApp */
+  --white:#fff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+  color:var(--text);
+  background:var(--cream);
+  line-height:1.6;
+}
+
+/* Layout */
+.container{width:min(1200px,92%);margin-inline:auto}
+.section{padding:64px 0}
+.section h2{
+  font-size:2rem;margin-bottom:16px;color:var(--dark)
+}
+.section p.lead{color:#5b5b5b;margin-bottom:24px}
+
+/* Header / Nav */
+.header{
+  background:var(--white);
+  border-bottom:1px solid #e8e8e8;
+  position:sticky;top:0;z-index:50;
+}
+.topbar{
+  background:var(--primary);
+  color:var(--white);
+  font-size:.9rem;
+  text-align:center;
+  padding:6px 0;
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;
+}
+.brand{display:flex;gap:10px;align-items:center}
+.brand .logo{
+  width:38px;height:38px;border-radius:8px;
+  background:var(--primary);
+  display:grid;place-items:center;color:var(--white);
+  font-weight:700
+}
+.brand span{font-weight:700;color:var(--dark)}
+.nav ul{display:flex;gap:18px;list-style:none}
+.nav a{
+  text-decoration:none;color:var(--dark);padding:8px 10px;border-radius:8px
+}
+.nav a:hover{background:var(--muted)}
+
+/* Hero */
+.hero{
+  background:linear-gradient(180deg,#00000088,#00000066), url('../assets/hero.jpg') center/cover no-repeat;
+  color:var(--white);
+  min-height:62vh;display:flex;align-items:center
+}
+.hero .content{max-width:700px}
+.badge{
+  display:inline-block;background:#ffffff1a;border:1px solid #ffffff3a;color:#fff;
+  padding:6px 10px;border-radius:999px;font-size:.85rem;margin-bottom:10px
+}
+.hero h1{font-size:3rem;line-height:1.1;margin-bottom:12px}
+.hero p{opacity:.95;margin-bottom:22px}
+.btn{
+  display:inline-block;border:none;border-radius:10px;padding:12px 18px;
+  font-weight:600;cursor:pointer;text-decoration:none
+}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:#fff;border:1px solid #ffffff80}
+.btn-outline:hover{background:#ffffff20}
+
+/* Features / Cards */
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px
+}
+.card{
+  background:var(--white);border:1px solid #eee;border-radius:14px;overflow:hidden;
+  box-shadow:0 6px 18px #00000012
+}
+.card img{width:100%;height:180px;object-fit:cover}
+.card .p{padding:14px}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.price{color:var(--primary);font-weight:700}
+
+/* Carousel (CSS only) */
+.carousel{position:relative;overflow:hidden;border-radius:14px}
+.carousel > div{display:flex;transition:transform .5s ease}
+.carousel img{width:100%;height:380px;object-fit:cover}
+.carousel-nav{
+  margin-top:10px;display:flex;gap:10px;justify-content:center
+}
+.carousel-nav button{
+  width:12px;height:12px;border-radius:50%;border:none;background:#cfcfcf;cursor:pointer
+}
+.carousel-nav button.active{background:var(--primary)}
+
+/* Grid gallery */
+.gallery{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px
+}
+.gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+
+/* Info band */
+.band{
+  background:var(--primary);color:#fff;border-radius:14px;padding:18px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px
+}
+
+/* Contact */
+.contact{
+  background:var(--muted);border:1px solid #eaeaea;border-radius:14px;padding:18px
+}
+.form{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px
+}
+.form .full{grid-column:span 2}
+.input, .textarea{
+  width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;background:#fff
+}
+.textarea{min-height:120px;resize:vertical}
+
+/* Footer */
+.footer{
+  background:#161616;color:#C9C9C9;margin-top:48px
+}
+.footer .grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px;padding:28px 0
+}
+.footer a{color:#C9C9C9;text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.copy{
+  border-top:1px solid #2a2a2a;padding:12px 0;color:#a9a9a9;font-size:.9rem;text-align:center
+}
+
+/* WhatsApp Floating Button */
+.whatsapp{
+  position:fixed;right:18px;bottom:18px;z-index:60
+}
+.whatsapp a{
+  display:flex;align-items:center;gap:10px;
+  background:var(--accent);color:#fff;padding:12px 14px;border-radius:999px;
+  box-shadow:0 6px 18px #00000020;text-decoration:none;font-weight:700
+}
+.whatsapp a:hover{filter:brightness(.95)}
+.whatsapp .icon{width:22px;height:22px;display:grid;place-items:center}
+
+/* Responsive */
+@media (max-width:1024px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .footer .grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .hero h1{font-size:2.2rem}
+  .cards{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .form .full{grid-column:span 1}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .nav ul{flex-wrap:wrap;gap:10px}
+}
