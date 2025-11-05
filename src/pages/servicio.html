@@ -1,11 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos | Marranera PigWork</title>
+  <link rel="stylesheet" href="../Styles/style.css" />
 </head>
 <body>
-    
+  <header class="header">
+    <div class="topbar">Promoción: 10% OFF pagando en efectivo</div>
+    <nav class="container nav">
+      <a class="brand" href="./index.html"><div class="logo">PW</div><span>Marranera PigWork</span></a>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a aria-current="page">Productos</a></li>
+        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a href="./index.html#contacto">Contáctenos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Nuestro catálogo</h2>
+        <p class="lead">Selecciona tus cortes favoritos y escríbenos por WhatsApp para confirmar disponibilidad y envío.</p>
+
+        <div class="cards">
+          <article class="card">
+            <img src="../assets/p-chicharron.jpg" alt="Chicharrón carnudo" />
+            <div class="p">
+              <h3>Chicharrón carnudo</h3>
+              <p>Corte parejo, perfecto para crocancia.</p>
+              <p class="price">$25.900 / lb</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/p-piernita.jpg" alt="Pierna de cerdo" />
+            <div class="p">
+              <h3>Pierna / Pernil</h3>
+              <p>Ideal para horno, fiestas y fin de año.</p>
+              <p class="price">$22.500 / lb</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/p-tocineta.jpg" alt="Tocineta" />
+            <div class="p">
+              <h3>Tocineta artesanal</h3>
+              <p>Ahumada, rebanada fina. Empaque al vacío.</p>
+              <p class="price">$28.900 / lb</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/p-chorizo.jpg" alt="Chorizos" />
+            <div class="p">
+              <h3>Chorizo de la casa</h3>
+              <p>Receta tradicional, 100% carne.</p>
+              <p class="price">$18.500 / 500g</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/p-bbq.jpg" alt="Costilla BBQ" />
+            <div class="p">
+              <h3>Costilla BBQ</h3>
+              <p>Para asar o ahumar, con gran marmoleo.</p>
+              <p class="price">$24.900 / lb</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/p-lomo.jpg" alt="Lomo de cerdo" />
+            <div class="p">
+              <h3>Lomo Premium</h3>
+              <p>Magro y suave, porciones a medida.</p>
+              <p class="price">$27.500 / lb</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="band" style="margin-top:18px">
+          <p>¿Buscas lechona o cerdo al horno para eventos? También lo preparamos.</p>
+          <a class="btn btn-primary" href="https://wa.me/573005335525?text=Hola%20PigWork,%20quiero%20cotizar%20lechona%20o%20cerdo%20al%20horno." target="_blank" rel="noopener">Cotizar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container grid">
+      <div>
+        <h3 style="color:#fff;margin-bottom:8px">Marranera PigWork</h3>
+        <p>Calle 123 #45-67, Barrio Centro, Ciudad</p>
+        <p>Horario: Lun–Sáb 8:00–18:00</p>
+      </div>
+      <div>
+        <h4 style="color:#fff;margin-bottom:8px">Enlaces</h4>
+        <ul style="list-style:none;display:grid;gap:6px">
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./servicio.html">Productos</a></li>
+          <li><a href="./nosotros.html">Nosotros</a></li>
+          <li><a href="./index.html#contacto">Contáctenos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff;margin-bottom:8px">Contacto</h4>
+        <p>Tel: 3005335525</p>
+        <p>Correo: ventas@pigwork.com</p>
+      </div>
+    </div>
+    <div class="copy">© <span id="y"></span> PigWork. Todos los derechos reservados.</div>
+  </footer>
+
+  <div class="whatsapp">
+    <a href="https://wa.me/573001112233?text=Hola%20PigWork,%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
+      <span class="icon">🟢</span> WhatsApp
+    </a>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
