@@ -55,7 +55,9 @@ body{
 }
 .nav a:hover{background:var(--muted)}
 
-/* Hero (ruta relativa correcta desde el CSS) */
+/* Hero
+   Nota: si cambias assets a un CDN/otro dominio, ese servidor debe enviar CORS.
+   Mientras todo esté en el mismo repo, esta ruta relativa no genera CORS. */
 .hero{
   background:linear-gradient(180deg,#00000088,#00000066), url('./assets/hero.jpg') center/cover no-repeat;
   color:var(--white);

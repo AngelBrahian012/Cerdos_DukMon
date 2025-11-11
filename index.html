@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cerdos DukMon</title>
   <meta name="description" content="Venta de carne de cerdo fresca: cortes prime, chorizos y más. Entregas a domicilio." />
-  <!-- CRUCIAL: ruta relativa SIN slash inicial -->
-  <link rel="stylesheet" href="./style.css" />
-  <!-- Opcional (ayuda durante pruebas) -->
+
+  <!-- Mantener hoja de estilos en mismo origen evita CORS.
+       Si algún día mueves a CDN, usa crossorigin y asegúrate que ese servidor envíe ACAO. -->
+  <link rel="stylesheet" href="./style.css" crossorigin="anonymous" />
+
+  <!-- Evitar caché agresivo durante pruebas -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -49,6 +52,8 @@
         <h2 id="h2-destacados">Productos destacados</h2>
         <p class="lead">Cortes populares para parrilla, cocina diaria y eventos especiales.</p>
         <div class="cards">
+          <!-- Si algún día sirves imágenes desde un CDN/otro dominio:
+               añade crossorigin="anonymous" y asegúrate de que el servidor envíe CORS -->
           <article class="card">
             <img src="./assets/pierna.jpg" alt="Pierna de cerdo" loading="lazy" />
             <div class="p">
@@ -132,7 +137,7 @@
     </section>
 
     <script>
-      // WhatsApp
+      // WhatsApp (no usa fetch => sin CORS)
       document.getElementById('form-wapp').addEventListener('submit', function (e) {
         e.preventDefault();
         const fd = new FormData(this);
@@ -149,7 +154,7 @@ Correo: ${datos.correo}
 Mensaje:
 ${datos.mensaje}`;
         const url = 'https://wa.me/573005335525?text=' + encodeURIComponent(texto);
-        window.open(url, '_blank');
+        window.open(url, '_blank', 'noopener');
       });
     </script>
   </main>
