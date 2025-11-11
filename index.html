@@ -4,8 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cerdos DukMon</title>
-  <link rel="stylesheet" href="./style.css" />
   <meta name="description" content="Venta de carne de cerdo fresca: cortes prime, chorizos y más. Entregas a domicilio." />
+  <!-- CRUCIAL: ruta relativa SIN slash inicial -->
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Opcional (ayuda durante pruebas) -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 </head>
 <body>
   <header class="header">
@@ -24,7 +29,7 @@
 
   <main>
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" role="banner" aria-label="Promoción principal">
       <div class="container">
         <div class="content">
           <span class="badge">Los mejores cortes de cerdo</span>
@@ -39,13 +44,13 @@
     </section>
 
     <!-- Destacados -->
-    <section class="section">
+    <section class="section" aria-labelledby="h2-destacados">
       <div class="container">
-        <h2>Productos destacados</h2>
+        <h2 id="h2-destacados">Productos destacados</h2>
         <p class="lead">Cortes populares para parrilla, cocina diaria y eventos especiales.</p>
         <div class="cards">
           <article class="card">
-            <img src="./assets/pierna.jpg" alt="Pierna de cerdo" />
+            <img src="./assets/pierna.jpg" alt="Pierna de cerdo" loading="lazy" />
             <div class="p">
               <h3>Pierna</h3>
               <p>Pierna carnuda y pulpa, ideal para tus preparaciones diarias.</p>
@@ -53,17 +58,17 @@
             </div>
           </article>
           <article class="card">
-            <img src="./assets/tocino.jpg" alt="Tocino De Cerdo" />
+            <img src="./assets/tocino.jpg" alt="Tocino de cerdo" loading="lazy" />
             <div class="p">
               <h3>Tocino</h3>
-              <p>Carnudo, suave y para preparaciones crocantes</p>
+              <p>Carnudo, suave y para preparaciones crocantes.</p>
               <p class="price">$26.000 / Kg</p>
             </div>
           </article>
           <article class="card">
-            <img src="./assets/costilla.jpg" alt="Costilla" />
+            <img src="./assets/costilla.jpg" alt="Costilla de cerdo" loading="lazy" />
             <div class="p">
-              <h3>Costilla de cerdo</h3>
+              <h3>Costilla</h3>
               <p>Listas para prepararla a tu gusto.</p>
               <p class="price">$26.000 / Kg</p>
             </div>
@@ -73,21 +78,21 @@
     </section>
 
     <!-- Banda informativa -->
-    <section class="section">
+    <section class="section" aria-label="Cotizaciones">
       <div class="container">
         <div class="band">
           <p><strong>¿Negocio o evento?</strong> Cotiza con nosotros los mejores precios.</p>
           <a class="btn btn-primary"
-            href="https://wa.me/573005335525?text=Hola%20Cerdos%20DukMon,%20quiero%20cotizar%20al%20por%20mayor."
-            target="_blank" rel="noopener">Cotizar en WhatsApp</a>
+             href="https://wa.me/573005335525?text=Hola%20Cerdos%20DukMon,%20quiero%20cotizar%20al%20por%20mayor."
+             target="_blank" rel="noopener">Cotizar en WhatsApp</a>
         </div>
       </div>
     </section>
 
     <!-- Carrusel simple -->
-    <section id="galeria" class="section">
+    <section id="galeria" class="section" aria-labelledby="h2-galeria">
       <div class="container">
-        <h2>Galería</h2>
+        <h2 id="h2-galeria">Galería</h2>
         <p class="lead">Algunas fotos de nuestros productos.</p>
 
         <div class="carousel" aria-roledescription="carrusel">
@@ -106,9 +111,9 @@
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="section">
+    <section id="contacto" class="section" aria-labelledby="h2-contacto">
       <div class="container">
-        <h2>Contáctenos</h2>
+        <h2 id="h2-contacto">Contáctenos</h2>
         <p class="lead">Pedidos, cotizaciones y sugerencias. Responderemos a la mayor brevedad.</p>
 
         <div class="contact">
@@ -120,7 +125,6 @@
 
             <div class="full" style="display:flex;gap:10px;flex-wrap:wrap">
               <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
-              <!-- <button class="btn btn-outline" type="button" id="btnEmail">Enviar por Email</button> -->
             </div>
           </form>
         </div>
@@ -145,11 +149,8 @@ Correo: ${datos.correo}
 Mensaje:
 ${datos.mensaje}`;
         const url = 'https://wa.me/573005335525?text=' + encodeURIComponent(texto);
-        window.open(url, '_blank'); // abre WhatsApp web / app
+        window.open(url, '_blank');
       });
-
-      // Si activas el botón de email, recuerda crear el elemento con id="btnEmail"
-      // document.getElementById('btnEmail').addEventListener('click', function () { ... });
     </script>
   </main>
 
@@ -186,7 +187,7 @@ ${datos.mensaje}`;
   </div>
 
   <script>
-    // Poner año en el footer y activar indicador del carrusel
+    // Año en footer y indicador del carrusel
     document.getElementById('y').textContent = new Date().getFullYear();
     function act(i) {
       const btns = document.querySelectorAll('.carousel-nav button');

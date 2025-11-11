@@ -21,9 +21,7 @@ body{
 /* Layout */
 .container{width:min(1200px,92%);margin-inline:auto}
 .section{padding:64px 0}
-.section h2{
-  font-size:2rem;margin-bottom:16px;color:var(--dark)
-}
+.section h2{font-size:2rem;margin-bottom:16px;color:var(--dark)}
 .section p.lead{color:#5b5b5b;margin-bottom:24px}
 
 /* Header / Nav */
@@ -57,7 +55,7 @@ body{
 }
 .nav a:hover{background:var(--muted)}
 
-/* Hero */
+/* Hero (ruta relativa correcta desde el CSS) */
 .hero{
   background:linear-gradient(180deg,#00000088,#00000066), url('./assets/hero.jpg') center/cover no-repeat;
   color:var(--white);
