@@ -1,27 +1,22 @@
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cerdos DukMon</title>
   <link rel="stylesheet" href="./style.css" />
-  <meta name="description"
-    content="Venta de carne de cerdo fresca: cortes prime, chorizos y más. Entregas a domicilio." />
+  <meta name="description" content="Venta de carne de cerdo fresca: cortes prime, chorizos y más. Entregas a domicilio." />
 </head>
-
 <body>
   <header class="header">
-    <!-- <div class="topbar">Envío GRATIS en compras mayores a $300.000 (área metropolitana)</div>
-     -->
     <nav class="container nav" aria-label="Principal">
       <a class="brand" href="./index.html">
         <div class="logo">CD</div><span>Cerdos DukMon</span>
       </a>
       <ul>
         <li><a href="./index.html">Inicio</a></li>
-        <li><a href="/servicio.html">Productos</a></li>
-        <li><a href="/nosotros.html">Nosotros</a></li>
+        <li><a href="./pages/servicio.html">Productos</a></li>
+        <li><a href="./pages/nosotros.html">Nosotros</a></li>
         <li><a href="#contacto">Contáctenos</a></li>
       </ul>
     </nav>
@@ -36,7 +31,7 @@
           <h1>Calidad Premium al mejor precio</h1>
           <p>Fresco, jugoso y seleccionado por expertos. Compra online y recibe en tu domicilio el mismo día.</p>
           <div style="display:flex;gap:10px">
-            <a class="btn btn-primary" href="/servicio.html">Ver productos</a>
+            <a class="btn btn-primary" href="./pages/servicio.html">Ver productos</a>
             <a class="btn btn-outline" href="#galeria">Ver galería</a>
           </div>
         </div>
@@ -50,7 +45,7 @@
         <p class="lead">Cortes populares para parrilla, cocina diaria y eventos especiales.</p>
         <div class="cards">
           <article class="card">
-            <img src="/assets/pierna.jpg" alt="Pierna de cerdo" />
+            <img src="./assets/pierna.jpg" alt="Pierna de cerdo" />
             <div class="p">
               <h3>Pierna</h3>
               <p>Pierna carnuda y pulpa, ideal para tus preparaciones diarias.</p>
@@ -58,7 +53,7 @@
             </div>
           </article>
           <article class="card">
-            <img src="/assets/tocino.jpg" alt="Tocino De Cerdo" />
+            <img src="./assets/tocino.jpg" alt="Tocino De Cerdo" />
             <div class="p">
               <h3>Tocino</h3>
               <p>Carnudo, suave y para preparaciones crocantes</p>
@@ -66,7 +61,7 @@
             </div>
           </article>
           <article class="card">
-            <img src="/assets/costilla.jpg" alt="Costilla" />
+            <img src="./assets/costilla.jpg" alt="Costilla" />
             <div class="p">
               <h3>Costilla de cerdo</h3>
               <p>Listas para prepararla a tu gusto.</p>
@@ -83,7 +78,7 @@
         <div class="band">
           <p><strong>¿Negocio o evento?</strong> Cotiza con nosotros los mejores precios.</p>
           <a class="btn btn-primary"
-            href="https://wa.me/573005335525?text=Hola%20CerdosDukMon,%20quiero%20cotizar%20al%20por%20mayor."
+            href="https://wa.me/573005335525?text=Hola%20Cerdos%20DukMon,%20quiero%20cotizar%20al%20por%20mayor."
             target="_blank" rel="noopener">Cotizar en WhatsApp</a>
         </div>
       </div>
@@ -97,17 +92,15 @@
 
         <div class="carousel" aria-roledescription="carrusel">
           <div id="track" style="transform:translateX(0%)">
-            <img src="/assets/pierna.jpg" alt="Corte de pierna de cerdo" />
-            <img src="/assets/tocino.jpg" alt="Tocino" />
-            <img src="/assets/hueso.jpg" alt="Hueso" />
+            <img src="./assets/pierna.jpg" alt="Corte de pierna de cerdo" />
+            <img src="./assets/tocino.jpg" alt="Tocino" />
+            <img src="./assets/hueso.jpg" alt="Hueso" />
           </div>
-
         </div>
         <div class="carousel-nav">
-          <button aria-label="Diapositiva 1" class="active"
-            onclick="document.getElementById('track').style.transform='translateX(0%)';act(0)"></button>
-          
-          
+          <button aria-label="Diapositiva 1" class="active" onclick="document.getElementById('track').style.transform='translateX(0%)';act(0)"></button>
+          <button aria-label="Diapositiva 2" onclick="document.getElementById('track').style.transform='translateX(-100%)';act(1)"></button>
+          <button aria-label="Diapositiva 3" onclick="document.getElementById('track').style.transform='translateX(-200%)';act(2)"></button>
         </div>
       </div>
     </section>
@@ -145,7 +138,7 @@
           correo: fd.get('correo'),
           mensaje: fd.get('mensaje')
         };
-        const texto = `Hola Cerdos Dukmon, soy ${datos.nombre}.
+        const texto = `Hola Cerdos DukMon, soy ${datos.nombre}.
 Tel: ${datos.telefono}
 Correo: ${datos.correo}
 
@@ -155,22 +148,9 @@ ${datos.mensaje}`;
         window.open(url, '_blank'); // abre WhatsApp web / app
       });
 
-      // Email (mailto)
-      document.getElementById('btnEmail').addEventListener('click', function () {
-        const f = document.getElementById('form-wapp');
-        const fd = new FormData(f);
-        const asunto = 'Contacto desde el sitio web';
-        const cuerpo = `Nombre: ${fd.get('nombre')}
-Teléfono: ${fd.get('telefono')}
-Correo: ${fd.get('correo')}
-
-Mensaje:
-${fd.get('mensaje')}`;
-        const mailto = `mailto: cerdos@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
-        window.location.href = mailto; // abre el cliente de correo del usuario
-      });
+      // Si activas el botón de email, recuerda crear el elemento con id="btnEmail"
+      // document.getElementById('btnEmail').addEventListener('click', function () { ... });
     </script>
-    
   </main>
 
   <footer class="footer">
@@ -184,25 +164,23 @@ ${fd.get('mensaje')}`;
         <h4 style="color:#fff;margin-bottom:8px">Enlaces</h4>
         <ul style="list-style:none;display:grid;gap:6px">
           <li><a href="./index.html">Inicio</a></li>
-          <li><a href="/servicio.html">Productos</a></li>
-          <li><a href="/nosotros.html">Nosotros</a></li>
+          <li><a href="./pages/servicio.html">Productos</a></li>
+          <li><a href="./pages/nosotros.html">Nosotros</a></li>
           <li><a href="#contacto">Contáctenos</a></li>
         </ul>
       </div>
       <div>
         <h4 style="color:#fff;margin-bottom:8px">Contacto</h4>
         <p>Tel: 3005335525</p>
-        <p>Correo: ventas@CerdosDukMon.com</p>
+        <p>Correo: ventas@cerdosdukmon.com</p>
       </div>
     </div>
-    <!--Programa desarrollado por Brahian Angel Ospina-->
     <div class="copy">© <span id="y"></span> Cerdos DukMon. Todos los derechos reservados.</div>
   </footer>
 
   <!-- Botón flotante WhatsApp -->
   <div class="whatsapp" aria-label="WhatsApp">
-    <a href="https://wa.me/573005335525?text=Hola%20CerdosDukMon,%20necesito%20información%20sobre%20productos."
-      target="_blank" rel="noopener">
+    <a href="https://wa.me/573005335525?text=Hola%20Cerdos%20DukMon,%20necesito%20información%20sobre%20productos." target="_blank" rel="noopener">
       <span class="icon">🟢</span> WhatsApp
     </a>
   </div>
@@ -217,5 +195,4 @@ ${fd.get('mensaje')}`;
     }
   </script>
 </body>
-
 </html>
